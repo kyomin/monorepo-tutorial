@@ -7,13 +7,17 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
+    "@storybook/addon-actions": "^5.3.8",
+    "@storybook/addon-links": "^5.3.8",
+    "@storybook/addons": "^5.3.8",
+    "@storybook/vue": "^5.3.9",
     "babel-loader": "^8.2.4",
     "babel-preset-vue": "^2.0.2",
     "lerna": "^4.0.0",
-    "vue-loader": "^17.0.0",
+    "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.14"
   },
   "dependencies": {
-    "vue": "^3.2.33"
+    "vue": "^2.5.21"
   }
 }
