@@ -1,7 +1,7 @@
 <template>
     <tr>
-        <td>
-
+        <td v-for="(value, index) in values" :key="index">
+            {{ value }}
         </td>
     </tr>
 </template>
