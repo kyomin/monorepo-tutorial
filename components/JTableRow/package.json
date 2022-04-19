@@ -1,5 +1,5 @@
 {
-    "name": "@jsilva-pt/j-table-row",
+    "name": "@kyomin/j-table-row",
     "version": "0.1.0",
     "publishConfig": {
         "access": "public"
