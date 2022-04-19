@@ -1,0 +1,19 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "babel-loader": "^8.2.4",
+    "babel-preset-vue": "^2.0.2",
+    "lerna": "^4.0.0",
+    "vue-loader": "^17.0.0",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "dependencies": {
+    "vue": "^3.2.33"
+  }
+}
