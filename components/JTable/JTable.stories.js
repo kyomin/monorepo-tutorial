@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/vue';
+import { withConsole } from '@storybook/addon-console';
 import JTable from './JTable';
 
 var items = [
@@ -12,6 +13,7 @@ var items = [
 ];
 
 storiesOf('JTable', module)
+    .addDecorator((storyFn, context) => withConsole()(storyFn)(context))
     .add('with 7 items', () => ({
         components: { JTable },
         template:
@@ -21,6 +23,23 @@ storiesOf('JTable', module)
             />
         `,
         data: () => ({
+            items
+        })
+    }))
+    .add('with 7 items + header', () => ({
+        components: { JTable },
+        template:
+        `
+            <JTable
+                :header="header"
+                :items="items"
+            />
+        `,
+        data: () => ({
+            header: [
+                'Name',
+                'Email'
+            ],
             items
         })
     }))
