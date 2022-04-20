@@ -1,0 +1,10 @@
+{
+  "name": "@kyomin/j-table",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@kyomin/j-table-row": "^0.2.0"
+  }
+}
