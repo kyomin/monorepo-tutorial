@@ -104,4 +104,26 @@ Repository가 분산되어있지 않고 하나의 Repository에 있기 때문에
 3. 두 번째 항목이 고려된 상황에서 `N개의 패키지 중 배포되어야 할 패키지의 비중이 큰` 경우   
    
 이 외에 애매한 경우는 Package의 규모이다.   
-Package가 클수록 개발 및 Build 등 Mono-Repo로 투자되는 비용이 많이 들기에 적당한 규모를 찾아야 하는데, 이는 설계자 또는 개발자 역량에 따라 다르기 때문에 참고해야 한다.
+Package가 클수록 개발 및 Build 등 Mono-Repo로 투자되는 비용이 많이 들기에 적당한 규모를 찾아야 하는데, 이는 설계자 또는 개발자 역량에 따라 다르기 때문에 참고해야 한다.   
+   
+# Lerna
+`lerna`는 **Git과 NPM을 사용하여 Mono-Repo 관리와 Workflow를 최적화는 도구**이다.   
+   
+## 특징
+`lerna`의 특징은 `Mono-Repo`를 구성하고 배포하는 데 중점에 둔 기능으로 볼 수 있다.   
+
+### 다중 패키지의 종속성 관리 및 모듈의 중복성 제거
+- lerna를 사용하여 node module을 설치할 경우 자체적으로 패키지들의 모듈을 설치하며, 그 과정에서 종속성을 관리하여 중복된 모듈을 하나로 통합한다.   
+
+### 다중 패키지의 단일 버전 및 독립적 버전 관리
+- `Mono-Repo`의 구성을 따르면 여러 개의 Package로 구성된다.   
+이런 Package는 어떤 상황에서 하나의 버전 정책을 가져갈 수 있지만, 또 어떤 경우에는 서로 독립적인 버전 정책을 가져가야 하는 경우가 있는데, `lerna`는 이러한 기능을 지원하여 버전 정책을 정할 수 있다.   
+
+### 변경된 패키지를 일괄적으로 Git Remote Repository에 Push
+- 여러 Package가 수정되었다면 Package 별로 Git Remote Repository에 commit과 push를 할 필요가 없다.   
+`lerna`를 사용하면 단 한 번의 commit과 push로 Git Remote Repository에 반영할 수 있다.   
+
+### 변경된 패키지를 일괄적으로 NPM Repository에 Publish
+- NPM Repository에 node module을 배포하기 위해서 `publish` 명령을 사용한다.   
+`Mono-Repo`에서 각 Package를 NPM Repository에 배포하기 위해서 하나하나 publish를 입력할 필요가 없다.   
+**단 한 번의 publish로 변경 사항이 있는 Package만 배포**가 될 것이다.
