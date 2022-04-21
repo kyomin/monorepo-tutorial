@@ -78,4 +78,17 @@ Repository가 분산되어있지 않고 하나의 Repository에 있기 때문에
    
 위 내용을 얼추 보면 `Mono-Repo`의 장점은 `Multi-Repo`의 단점이고, `Multi-Repo`의 장점은 `Mono-Repo`의 단점이라는 것을 알 수 있다.   
 이렇게 장단점이 교차하기 때문에 무조건 `Mono-Repo`가 좋은 것은 아니다.   
-어떤 상황에서는 `Multi-Repo`가 빛을 발하는 경우가 있을 것이다.
+어떤 상황에서는 `Multi-Repo`가 빛을 발하는 경우가 있을 것이다.   
+   
+# 규모가 큰 Mono-Repo의 대표적인 사례
+사실 `Mono-Repo`가 활성화되는 시점은 이 사례부터일지도 모른다.   
+이 사례를 통해서 `Mono-Repo`를 보장한다고 볼 수 있다.   
+   
+### Google
+- 초기 Google은 중앙 집중식 소스 제어 시스템을 통해 관리되는 공유 코드 베이스로 작업하기로 결정했다.   
+이 접근 방식은 16년 이상 Google에 좋은 서비스를 제공해 왔으며, 오늘날 Google의 소프트웨어 대부분이 `Mono-Repo`로 구성되어있다.   
+대표적인 예로 Google은 `Bazel`을 빌드 시스템으로 사용하며, `Mono-Repo`로 구성되어있다.   
+
+### Facebook
+- 수십만 개의 파일에 대해 매주 수천 개의 커밋이 있는 Facebook의 기본 소스 저장소는 Linux 커널보다 훨씬 더 크다.   
+대표적으로 `Buck` 및 `Scaling Mercurial`이 있다.
