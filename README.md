@@ -135,4 +135,23 @@ Package가 클수록 개발 및 Build 등 Mono-Repo로 투자되는 비용이 �
    
 Root 경로에 있는 `package.json`에는 모든 package가 공통으로 사용하는 `dependencies`가 명시되는 등 공통 항목이 나열된다.   
    
-![레르나 폴더 구조](https://user-images.githubusercontent.com/46395776/165488045-b4f37e6b-ee07-405d-b6fc-73c570221906.png)
+![레르나 폴더 구조](https://user-images.githubusercontent.com/46395776/165488045-b4f37e6b-ee07-405d-b6fc-73c570221906.png)   
+   
+# lerna의 주요 기능
+### Fixed Mode
+- 다중 패키지의 버전이 `단일 버전 라인`에서 작동하며 관리   
+- 버전은 프로젝트 Root에서 관리되며 `lerna publish`를 실행할 경우 새 버전으로 패키지를 게시   
+- 하나의 패키지가 수정되더라도 모든 패키지는 새로운 버전을 게시   
+   
+### Independent Mode
+- 패키지의 유지 관리자가 서로 `독립적으로 패키지 버전을 관리`   
+- `lerna publish` 시 변경된 패키지에 대해서만 새 버전을 업데이트   
+- 버전은 각 패키지의 package.json에 명시   
+   
+### Hoisting
+- 다중 패키지에서 사용되는 node module을 최적화하여 중복되는 node module을 최상위 경로로 재구축   
+- 공통 종속성은 최상위 수준에서만 설치되며 개별 패키지는 생략   
+   
+![모노레포 호이스트](https://user-images.githubusercontent.com/46395776/165493427-280385f7-f107-4e7c-935d-2ff68e25e5ec.png)   
+   
+위 그림에서 보듯이 `hoist`를 통해서 node_module을 최적화하여 중복되는 모듈 B(1.0)을 최상위로 재구축한다.
