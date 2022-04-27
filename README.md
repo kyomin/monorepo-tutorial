@@ -126,4 +126,13 @@ Package가 클수록 개발 및 Build 등 Mono-Repo로 투자되는 비용이 �
 ### 변경된 패키지를 일괄적으로 NPM Repository에 Publish
 - NPM Repository에 node module을 배포하기 위해서 `publish` 명령을 사용한다.   
 `Mono-Repo`에서 각 Package를 NPM Repository에 배포하기 위해서 하나하나 publish를 입력할 필요가 없다.   
-**단 한 번의 publish로 변경 사항이 있는 Package만 배포**가 될 것이다.
+**단 한 번의 publish로 변경 사항이 있는 Package만 배포**가 될 것이다.   
+   
+# lerna의 구조
+`lerna`의 기본 구조는 Root 경로 아래 `packages` 폴더가 있고, 그 하위에 각각 package별 폴더가 생성된다.   
+`packages` 폴더는 기본값이며 설정에 따라 유동적으로 변경할 수 있다(현 프로젝트에서는 components로 명명하였다).   
+각 pacakge 폴더는 pacakge 별 이름을 지정할 수 있으며, 각각의 pacakges에는 `package.json`이 명시되는 것처럼 **하나의 모듈로 간주**한다.   
+   
+Root 경로에 있는 `package.json`에는 모든 package가 공통으로 사용하는 `dependencies`가 명시되는 등 공통 항목이 나열된다.   
+   
+![레르나 폴더 구조](https://user-images.githubusercontent.com/46395776/165488045-b4f37e6b-ee07-405d-b6fc-73c570221906.png)
