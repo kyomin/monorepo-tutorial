@@ -154,4 +154,23 @@ Root 경로에 있는 `package.json`에는 모든 package가 공통으로 사용
    
 ![모노레포 호이스트](https://user-images.githubusercontent.com/46395776/165493427-280385f7-f107-4e7c-935d-2ff68e25e5ec.png)   
    
-위 그림에서 보듯이 `hoist`를 통해서 node_module을 최적화하여 중복되는 모듈 B(1.0)을 최상위로 재구축한다.
+위 그림에서 보듯이 `hoist`를 통해서 node_module을 최적화하여 중복되는 모듈 B(1.0)을 최상위로 재구축한다.   
+   
+# lerna 주요 명령어
+`lerna`의 핵심 명령어는 `bootstrap`과 `publish`이다.   
+`bootstrap`을 통해서 모든 package에 node module을 설치하며 최적화를 통해 중복된 모듈을 정리해준다.   
+`publish`는 `npm publish`와 동일한 기능을 하지만 `lerna`에서는 모든 pacakge를 대상으로 한 번의 명령어로 배포할 수 있다.
+### lerna clean
+Root를 제외한 package에서 node_module을 제거한다.   
+
+### lerna bootstrap
+모든 패키지의 node_module을 설치한다.   
+
+### lerna run
+각 패키지의 package.json에 명시된 script를 실행한다.   
+
+### lerna publish
+마지막 릴리즈 이후 업데이트 된 패키지를 배포한다.   
+
+### lerna exec
+각 패키지에서 임의의 커맨드 명령어를 실행한다.
